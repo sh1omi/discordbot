@@ -1,0 +1,45 @@
+{
+  "name": "sh1omi",
+  "version": "0.0.1",
+  "description": "Discord bot that using discordie",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh1omi/discordbot.git"
+  },
+  "keywords": [
+    "discordapp",
+    "discord",
+    "api",
+    "client",
+    "node",
+    "node.js",
+    "sh1omi"
+  ],
+  "author": "sh1omi",
+  "license": "MIT",
+  "dependencies": {
+    "discordie":"latest",
+    "double-ended-queue": "latest",
+    "ebml": "latest",
+    "pako": "latest",
+    "requireindex": "latest",
+    "superagent": "latest",
+    "tweetnacl": "latest",
+    "ws": "latest",
+    "path":"latest",
+    "express": "latest",
+    "google-images": "latest",
+    "giphy-api": "latest",
+    "os":"latest",
+    "youtube-node":"latest",
+    "dateformat":"latest"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

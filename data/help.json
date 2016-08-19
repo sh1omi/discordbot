@@ -1,0 +1,16 @@
+{
+  "Example Of Category": [
+    {
+      "help": "change me?",
+      "alias": ["discord","bot","sh1omi"]
+    }
+  ],
+  "Example Without Help": [
+    {
+      "alias": ["example1"]
+    },
+    {
+      "alias": ["example2","example3"]
+    }
+  ]
+}
