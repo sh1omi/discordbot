@@ -56,7 +56,6 @@ The help infomartion will be send as a DirectMessage(you can change that in "com
 ![alt tag](http://i.imgur.com/xlXec48.png)
 ### Log feature
 The bot will log all the commands that executed in a channel that you choose in the config file.
-
 If you want to change something with the log settings go to "index.js" line 32.
 
 ![alt tag](http://i.imgur.com/sYtYCqm.png)
