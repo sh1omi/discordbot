@@ -14,8 +14,11 @@ require("fs").readdirSync(require("path").join(__dirname, "commands")).forEach(f
   let command = require("./commands/" + file);
 	console.log(file+" loaded.");
   for (let i = 0;i < command.length; i++) {
-    for (let y = 0;y < command[i].alias.length; y++) {
-      cmd[command[i].alias[y]] = command[i].action;
+    cmd[command[i].alias[0]] = command[i].action;
+    if(command[i].alias.length!=1){
+      for (let y = 1;y < command[i].alias.length; y++) {
+        cmd[command[i].alias[y]] = command[i].alias[0];
+      }
     }
   }
 });
@@ -24,10 +27,12 @@ const messageHandler = function(e){
   if(e.message.content[0] === "!") {
     const params = e.message.content.split(" ");
     const command = params.shift().substr(1);
-    if (typeof cmd[command] != "undefined") {
-    	cmd[command](client,e.message,params);
+    if (typeof cmd[command] == "function") {
+      cmd[command](client,e.message,params);
+    }else if(typeof cmd[command] == "string") {
+      cmd[cmd[command]](client,e.message,params);
     }else{
-    	e.message.channel.sendMessage("Hmm, you need help? !help for help :smile:");
+      e.message.channel.sendMessage("Hmm, you need help? !help for help :smile:");
     }
     client.Channels.get(config.log).sendMessage("["+dateFormat(new Date(), "HH:MM:ss")+"] "+e.message.author.username+"#"+e.message.author.discriminator+"```xl\n"+e.message.content+"```");
   }
